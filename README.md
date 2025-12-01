@@ -8,7 +8,7 @@ The system contain 2 types of user - Approver and Requester. Each user has its o
 - Step 1: Open VS Community and click `Clone Repository` at right side.
 - Step 2: Copy `https://github.com/Eddy-Koh/AppointmentSystemWFA.git` and select the empty folder that want to clone.
 - Step 3: Double click the .sln file in solution explorer at right side.
-- Step 4: Go to `Tools` > `NuGet Package Manager` > `Package Manager Console`, run `Install-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform` and `Install-Package MySql.Data`. 
+- Step 4: Go to `Tools` > `NuGet Package Manager` > `Package Manager Console`, run `Install-Package MySql.Data`. 
 - Step 5: Press `Ctrl + Shift + B` to build the solution and `F5` to run the system.
 **Check for the `Configuration` that stated below before run the system.**
   

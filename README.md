@@ -10,7 +10,7 @@ The system contain 2 types of user - Approver and Requester. Each user has its o
 - Step 3: Double click the .sln file in solution explorer at right side.
 - Step 4: Go to `Tools` > `NuGet Package Manager` > `Package Manager Console`, run `Install-Package MySql.Data`. 
 - Step 5: Press `Ctrl + Shift + B` to build the solution and `F5` to run the system.
-- 
+  
 **Check for the `Configuration` that stated below before run the system.**
   
 ---

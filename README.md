@@ -1,0 +1,70 @@
+# Appointment Booking System
+This is a C# Windows Forms Appointment Booking System with features like user registration, role-based approval, appointment scheduling and password reset via email.
+The system contain 2 types of user - Approver and Requester. Each user has its own accessibility as described in Section `Features`.
+
+---
+
+## ▶️ Step by Step on How to Clone Project and Use the System
+- Step 1: Open VS Community and click `Clone Repository` at right side.
+- Step 2: Copy `https://github.com/Eddy-Koh/AppointmentSystemWithMySQL.git` and select the empty folder that want to clone.
+- Step 3: Double click the .sln file in solution explorer at right side.
+- Step 4: Go to `Tools` > `NuGet Package Manager` > `Package Manager Console`, run `Install-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform` and `Install-Package MySql.Data`. 
+- Step 5: Press `Ctrl + Shift + B` to build the solution and `F5` to run the system.
+**Check for the `Configuration` that stated below before run the system.**
+  
+---
+
+## ▶️ Running the Project
+- **Debug**: Press `F5`
+- **Run without debugging**: Press `Ctrl + F5`
+- **Stop/Build**: Press `Ctrl + Shift + B`
+
+---
+
+## ⚙️ Configuration
+### 1. Enable MySQL connectivity
+- Go to `Tools` > `NuGet Package Manager` > `Package Manager Console`
+- run: `Install-Package MySql.Data`
+
+### 2. Use the Reset Password feature
+- Before running the project, update the `SendEmail` function in `Forms/Account/ResetPassowordForm.cs`(line 161 to 171) with your own Gmail credentials.
+
+**Ensure MySQL server is running, connection strings are correct and email credentials are configured well before using the system.**
+
+---
+
+## ⚙️ Features
+### 1. Role-based registration (Requester auto-approved, Approver pending unless first)
+- For Requester, the user can direct login to the system after register account, the system will direct approve user registration.
+- For Approver, the user registration need to be accepted by exist approver before can login the system, unless the approver is the first user register as approver.
+
+### 2. User Registration Management 
+- The feature is only available for Approver, Requester cannot access.
+- The Approver can view all the user details in this feature.
+- The Approver can accept or reject the Approver registration as well as view the details, but for Requester, Approver only can view the details. 
+
+### 3. Appointment scheduling with date/time validation
+Requester
+- Can create, view, edit and delete appointment
+
+Approver
+- Can view, approve/reject the appointment
+
+Appointment
+- After one appointment is approved, other appointments which has crashed time with the approved appointment will auto-reject.
+- The timeslot for the approved appointment will also be locked to prevent future crash booking.
+- Can only be made on working hour - Monday to Friday from 8am to 5pm. (Cannot make appointment on weekend)
+- Can only be made on the day after current day.
+- The end time must be after the start time.
+
+### 4. Password reset via email OTP
+- Step 1: User provide their username or email.
+- Step 2: OTP will send to the email.
+- Step 3: Provide the OTP for reset password.
+- Step 4: Provide the new password.
+
+### 5. Automatic creation of database and tables if missing
+- Do not need to create database and tables manually.
+- The system will self-create database (appointment_db) and tables (users and appointments) when run the system.
+
+---

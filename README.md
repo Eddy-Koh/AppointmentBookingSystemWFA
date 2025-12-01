@@ -29,7 +29,7 @@ The system contain 2 types of user - Approver and Requester. Each user has its o
 ### 2. Use the Reset Password feature
 - Before running the project, update the `SendEmail` function in `Forms/Account/ResetPassowordForm.cs`(line 161 to 171) with your own Gmail credentials.
 
-**Ensure MySQL server is running, connection strings are correct and email credentials are configured well before using the system.**
+**Ensure MySQL server is running, connection are correct and email credentials are configured well before using the system.**
 
 ---
 
